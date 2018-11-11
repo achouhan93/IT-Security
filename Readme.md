@@ -1,4 +1,5 @@
 IT-Security Assignment 3:
+
 In this repository as a part of IT-Security Module Assignment, at the first commit a Web Page is created which is deliberately Vulnerable to Cross Site Scripting.
 
 a) First commit consist of document.write() for the search input field which helps to display the content on the web page.
