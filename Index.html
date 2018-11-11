@@ -28,8 +28,16 @@
 
 <script>
     function onSubmitClick(){
+
         var userInput = document.getElementById("userInput").value;
-        document.write("We could not find anything for: " + userInput);
+        // document.write() is vulnerable to execution of <script>
+        //
+        // document.write("We could not find anything for: " + userInput);
+
+        // Inorder to prevent the <script> code from execution on Web page document.write() is replaced with document.innerHTML()
+        //
+        var resultContainer = document.getElementById("result");
+        resultContainer.innerHTML = "We could not find anything for: " + userInput;
     }
 </script>
 
