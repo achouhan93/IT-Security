@@ -1,4 +1,6 @@
 <!--- First Commit is having document.write() which is vulnerable to <script> tag --->
+<!--- Second Commit is to replace document.write() with document.innerHTML() --->
+<!--- Third Commit is to replace document.innerHTML() with document.textcontent() --->
 <html>
 
 <head>
@@ -30,14 +32,20 @@
     function onSubmitClick(){
 
         var userInput = document.getElementById("userInput").value;
-        // document.write() is vulnerable to execution of <script>
+        // document.write() is vulnerable to execution of code in <script>
         //
         // document.write("We could not find anything for: " + userInput);
-
+        //
         // Inorder to prevent the <script> code from execution on Web page document.write() is replaced with document.innerHTML()
         //
         var resultContainer = document.getElementById("result");
-        resultContainer.innerHTML = "We could not find anything for: " + userInput;
+        //
+        // document.innerHTML() is vulnerable to execution of code in <img> tag
+        //
+        // resultContainer.innerHTML = "We could not find anything for: " + userInput;
+        //
+        // Inorder to prevent the code within <img> to get executed. document.innerHTML() is replaced with document.textcontent()
+        resultContainer.textcontent = "We could not find anything for: " + userInput;
     }
 </script>
 
