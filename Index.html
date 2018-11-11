@@ -1,0 +1,37 @@
+<!--- First Commit is having document.write() which is vulnerable to <script> tag --->
+<html>
+
+<head>
+    <title>Hello Students></title>
+</head>
+
+<body>
+
+<h1>Fun With Sports</h1>
+
+<div>
+    <p> What are you looking for?</p>
+    <input id="userInput" />
+    <button onclick= "onSubmitClick()">Search</button>
+    <div id="result"></div>
+</div>
+
+<style>
+    h1{
+        color: red;
+        text-align: center;
+    }
+    div {
+        text-align: center;
+    }
+</style>
+
+<script>
+    function onSubmitClick(){
+        var userInput = document.getElementById("userInput").value;
+        document.write("We could not find anything for: " + userInput);
+    }
+</script>
+
+</body>
+</html>
